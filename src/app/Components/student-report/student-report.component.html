@@ -1,0 +1,38 @@
+<div class="container">
+  <button class="pulse-button" (click)="backToCourseReport()"> לחזרה לדוח התלמידים</button>
+  <p class="pulse-button" >{{student.FirstName}} {{student.LastName}}</p>
+  </div>
+  
+  <div class="col-lg-10 offset-lg-1"> 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+     
+        <th scope="col">תשובה לתרגיל</th>
+        <th scope="col">נכח / לא נכח</th>
+        <th scope="col">מספר שיעור</th>
+      </tr>
+      
+    </thead>
+  
+    <tbody *ngFor="let lesson of student.allLessons;let i=index">
+      <tr >
+   
+        <td [ngClass]="{'zugi':i%2==0,'notZugi':i%2!=0}">{{lesson.answer}}</td>
+        <td [ngClass]="{'zugi':i%2==0,'notZugi':i%2!=0}"> <span *ngIf="lesson.isExecution">V</span> <span *ngIf="!lesson.isExecution">X</span></td>
+        <td [ngClass]="{'zugi':i%2==0,'notZugi':i%2!=0}">{{i+1}}</td>
+     
+      </tr>
+  
+    </tbody>
+  </table>
+  </div>
+
+
+
+
+  
+
+
+
+  

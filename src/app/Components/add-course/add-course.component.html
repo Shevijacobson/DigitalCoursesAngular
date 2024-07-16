@@ -1,0 +1,74 @@
+
+
+<br>
+<br>
+<div class="register-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>שם קורס</label>
+        <input type="text" formControlName="nameCourse" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f['nameCourse'].errors }" />
+        @if (submitted && f['nameCourse'].errors) {
+        <div class="invalid-feedback">
+          @if (f['nameCourse'].errors['required']) {
+          <div>courseName is required</div>
+          } @if (f['nameCourse'].errors['nameCourse']) {
+          <div>courseName is invalid</div>
+          }
+        </div>
+        }
+      </div>  
+
+
+
+
+
+<br>
+<br>
+      <mat-form-field>
+        <mat-label>רשימת מורות</mat-label>
+        <mat-select (selectionChange)="someMethod($event.value)" >
+          @for (teacher of teachersArr; track teacher) {
+            <mat-option [value]="teacher">{{teacher.FirstName}} {{teacher.LastName}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <span *ngIf="!isExistTeacherChosen">לא נבחרה מורה</span>
+      <br>
+  
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">שליחה</button>
+      </div>    
+     
+    </form>
+  </div>
+
+<!-- 
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>שם קורס</label>
+      <input type="text" formControlName="nameCourse" class="form-control" />
+      <div *ngIf="submitted && f['nameCourse'].errors" class="invalid-feedback">
+        <div *ngIf="f['nameCourse'].errors['required']">שם הקורס נדרש</div>
+      </div>
+    </div>
+
+    <mat-form-field>
+      <mat-label>רשימת מורות</mat-label>
+      <mat-select formControlName="teacherChosen" (selectionChange)="someMethod($event.value)">
+        <mat-option *ngFor="let teacher of teachersArr" [value]="teacher">
+          {{ teacher.FirstName }} {{ teacher.LastName }}
+          
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <span *ngIf="!isExistTeacherChosen">לא נבחרה מורה</span>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">שליחה</button>
+    </div>
+  </form>
+</div> -->

@@ -1,0 +1,10 @@
+
+
+<p *ngIf="user.user.Access!=-1">
+    <button type="button" class="btn btn-outline-primary" aria-label="Close" (click)="Disconnected()" *ngIf="user.user.Access!=-1">התנתק</button>
+    שלום ל{{user.user.FirstName}}
+    </p>
+
+<app-login *ngIf="isLogin"  (loginToHomePage)="clickSumbit()" ></app-login>
+<router-outlet></router-outlet>
+

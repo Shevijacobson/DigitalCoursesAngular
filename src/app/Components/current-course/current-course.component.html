@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <div class="row justify-content-between align-items-center mb-4">
+                <div class="col-auto" style="width: 20%;">
+                    <h2 class="pulse-button" (click)="returnToAllCourses()">חזרה לרשימת הקורסים</h2>
+                </div>
+                <div class="col-auto mr-auto text-right" style="width: 80%;">
+                    <h2 class="pulse-button">קורס {{ nameCourse }}</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <ng-container *ngFor="let l of arrLesson; let i = index">
+                    <div class="col-md-4 mb-3">
+                        <div class="card text-center">
+                            <div class="card-body" [ngStyle]="{'border': getColor(l.Id)}">
+                                <h5 class="card-title">{{ i+1 }} שיעור</h5>
+                                <p *ngIf="!IfGoToLesson(l.Id)" class="card-text">
+                                    כדי לצפות בשיעור זה עליך לצפות בכל השיעורים הקודמים
+                                </p>
+                                <button *ngIf="IfGoToLesson(l.Id)" (click)="GoToLesson(l.Id)"
+                                    class="btn btn-primary pulse-button">
+                                    למעבר לשיעור
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

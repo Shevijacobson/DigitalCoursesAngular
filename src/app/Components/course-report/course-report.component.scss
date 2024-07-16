@@ -1,0 +1,46 @@
+.btnMoreDetails{
+  border: none;
+  background-color: white;
+}
+thead tr th{
+  background-color:#2196f373;
+}
+table th {
+  text-align: center; 
+}
+
+table td{
+  text-align: center;
+}
+
+.pulse-button {
+width: 50%;
+
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+
+.container{
+  display: flex;
+  align-items: flex-start;
+  width: 60%;
+  gap: 3%;
+  margin-left: 35%;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+button.pulse-button{
+  width: 20%;
+}
+p.pulse-button{
+  width: 40%;
+  text-align: center;
+}

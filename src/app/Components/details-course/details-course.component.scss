@@ -1,0 +1,47 @@
+.all_lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  margin-left: 60%;
+}
+
+.add_course {
+  height: 60%;
+  width: 30%;
+  background-color: #3f51b5;
+  margin-left: 10%;
+  border-radius: 2%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+#saveLesson{
+  height: 1%;
+  width: 40%;
+  font-size: small;
+  margin-top: -5%;
+  margin-left: 3%;
+
+
+  
+}
+mat-form-field{
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 10%;
+ }
+
+.add_course form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .add_course button{
+    height: 1.5cm ;
+    margin-left: 25%;
+    margin-top: 10%;
+    width: 50%;
+    background-color: white;
+    color: #3f51b5;
+  }

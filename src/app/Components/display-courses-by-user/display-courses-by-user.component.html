@@ -1,0 +1,39 @@
+<br>
+<br>
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="allCourses" *ngFor="let c of arrCour; let i=index">
+  <div class="col">
+    <div class="card h-100">
+      <img src="https://cdn-icons-gif.flaticon.com/10971/10971333.gif" style="width: 100px; height: 100px;" class="card-img-top" alt="...">
+      
+      <div class="card-body">
+        <h5 class="card-title">קורס {{c.Name}}</h5>
+        <p *ngIf="user.Id!='0000'" card-text>צפית {{countListen(c.Id)}} שיעורים מתוך {{countLessonInCours(c.Id)}} </p>
+        <p *ngIf="user.Id=='0000'" class="card-text">בקורס זה קיימים {{countLessonInCours(c.Id)}} שיעורים </p>
+        <button class="pulse-button" (click)="EnterToCourse(c.Id)">למעבר לקורס</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">מורה {{techerOfLesson(c.IdTeacher)}} </small>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="container">
+  <button class="pulse-button" (click)="backToHomePageTeacher()">לעמוד הבית</button>
+
+  <p class="pulse-button" >דוח התלמידים</p>
+  </div>
+
+<div class="col-lg-10 offset-lg-1"> 
+<table class="table table-bordered" >
+<thead>
+<tr>
+<th scope="col">פרטים נוספים</th>
+<th scope="col">מספר היעדרויות</th>
+<th scope="col">שם התלמיד</th>
+<th scope="col">ת.ז.</th>
+</tr>
+</thead>
+
+<tbody *ngFor="let student of studentsArrWithAllDetails;let i=index">
+<tr>
+<th ><button class="btnMoreDetails" (click)="navigateToStudentReport(student.Id)"><img style="height: 0.5cm;" src="../../../assets/images/wired-outline-35-edit (1).gif" alt=""></button></th>
+<td >{{student.absentLessons}} / {{student.numlesson}}</td>
+<td>{{student.FirstName}} {{student.LastName}}</td>
+<td>{{student.Id}}</td>
+</tr>
+
+</tbody>
+</table>
+</div>

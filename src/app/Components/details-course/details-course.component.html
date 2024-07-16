@@ -1,0 +1,31 @@
+
+
+<div class="all_lessons">
+    <button mat-raised-button color="primary" routerLink="/report/courseId/{{course.Id}}" style="height: 1.5cm ;width: 5cm;">צור דוח לקורס זה</button>
+    <br>
+    <button mat-raised-button color="primary" disabled="true"
+        style=" height: 1.5cm ;width: 5cm;background-color: #3f51b5;color: white;">רשימת שיעורים של קורס
+        {{course.Name}}</button>
+
+    <div *ngFor="let p of arr; let i=index">
+        <button mat-raised-button color="primary" routerLink="/idCourse/{{p.IdCourse}}/currentLesson/{{i}}"
+            style="height: 1.5cm ;width: 5cm;">{{i+1}} שעור
+        </button><br>
+    </div>
+</div>
+
+<div class="add_course">
+    <button mat-raised-button color="primary" disabled="true">הוסף שיעור {{arr.length+1}}</button>
+    <form [formGroup]="formdata">
+        <mat-form-field style="margin-top: 30%;">
+            <mat-label>הכנס קישור לסרטון השיעור</mat-label>
+            <input matInput name="link" formControlName="linkValue">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>הכנס תרגיל</mat-label>
+            <input matInput name="exe" formControlName="exeValue">
+        </mat-form-field>
+        <button (click)="checkval()" mat-raised-button color="primary" id="saveLesson">שמור שיעור </button>
+    </form>
+</div>
+

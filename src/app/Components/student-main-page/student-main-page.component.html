@@ -1,0 +1,28 @@
+<!-- <h1>שלום ל{{user.FirstName}}</h1> -->
+<!-- <button (click)="Disconnected()">התנתק</button> -->
+<div class="allCourse" *ngFor="let c of arrCour; let i=index">
+    <div class="oneCourse">
+<p>קורס {{c.Name}}</p>
+<p>צפית {{countListen(c.Id)}}</p>
+<P>מתוך {{countLessonInCours(c.Id)}}</P>
+<p>מורה {{techerOfLesson(c.IdTeacher)}}</p>
+<button class="pulse-button" (click)="EnterToCourse(c.Id)">למעבר לקורס</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

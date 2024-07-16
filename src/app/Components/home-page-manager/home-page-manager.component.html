@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid" >
+    <button class="navbar-brand" (click)="disConnected()" >התנתק <img src="../../../assets/images/arrow2.gif" style=></button>
+    <button  class="navbar-brand" (click)="passComponent(1)">קורסים <img src="../../../assets/images/allLesson2.gif" ></button>
+    
+    <button class="navbar-brand" (click)="passComponent(2)">הוספת מורה <img src="../../../assets/images/plus2.gif" ></button>
+    <button class="navbar-brand" (click)="passComponent(3)">הוספת תלמיד <img src="../../../assets/images/plus2.gif" ></button>
+    <button class="navbar-brand" (click)="passComponent(6)">הוספת קורס <img src="../../../assets/images/plus2.gif"></button>
+    <button class="navbar-brand" (click)="passComponent(4)">דוחות מורות <img src="../../../assets/images/report2.gif" ></button>
+    <button class="navbar-brand" (click)="passComponent(5)">דוחות תלמידים <img src="../../../assets/images/report2.gif" ></button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

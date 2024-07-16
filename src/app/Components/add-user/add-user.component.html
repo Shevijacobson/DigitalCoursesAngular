@@ -1,0 +1,110 @@
+<br>
+<br>
+<br>
+<div class="register-form">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label> שם פרטי</label>
+      <input type="text" formControlName="firstName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" />
+      @if (submitted && f['firstName'].errors) {
+      <div class="invalid-feedback">
+        @if (f['firstName'].errors['required']) {
+        <div>firstName is required</div>
+        }
+      </div>
+      }
+    </div>
+    <br>
+    <div class="form-group">
+      <label>שם משפחה</label>
+      <input type="text" formControlName="lastName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+      @if (submitted && f['lastName'].errors) {
+      <div class="invalid-feedback">
+        @if (f['lastName'].errors['required']) {
+        <div>lastName is required</div>
+        } @if (f['lastName'].errors['minlength']) {
+        <div>lastName must be at least 2 characters</div>
+        } @if (f['lastName'].errors['maxlength']) {
+        <div>lastName must not exceed 20 characters</div>
+        }
+      </div>
+      }
+    </div>
+    <br>
+    <div class="form-group">
+      <label> ת.ז. </label>
+      <input  type="text" formControlName="id" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['id'].errors }" />
+      @if (submitted && f['id'].errors) {
+      <div class="invalid-feedback">
+        @if (f['id'].errors['required']) {
+        <div>id is required</div>
+        }
+        @if (f['id'].errors['minlength']) {
+        <div>Id must contain 9 characters</div>
+        } @if (f['id'].errors['maxlength']) {
+        <div>Id must contain 9 characters</div>
+        }
+      </div>
+      }
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label>סיסמא</label>
+      <input formControlName="password" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+      @if (submitted && f['password'].errors) {
+      <div class="invalid-feedback">
+        @if (f['password'].errors['required']) {
+        <div>Password is required</div>
+        } @if (f['password'].errors['minlength']) {
+        <div>Password must be at least 4 characters</div>
+        } @if (f['password'].errors['maxlength']) {
+        <div>Password must not exceed 4 characters</div>
+        }
+      </div>
+      }
+    </div>
+    <br>
+    <div class="form-group">
+      <label> אישור סיסמא</label>
+      <input type="password" formControlName="confirmPassword" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
+      @if (submitted && f['confirmPassword'].errors) {
+      <div class="invalid-feedback">
+        @if (f['confirmPassword'].errors['required']) {
+        <div>Confirm Password is required</div>
+        } @if (f['confirmPassword'].errors['matching']) {
+        <div>Confirm Password does not match</div>
+        }
+      </div>
+      }
+    </div>
+
+
+    <br>
+    <mat-form-field  *ngIf="!router.url.split('/').pop()?.includes('Teacher')">
+      <mat-label>רשימת הקורסים</mat-label>
+      <mat-select (selectionChange)="someMethod($event.value)" [formControl]="coursesControl" multiple>
+        @for (course of coursesList; track course) {
+        <mat-option  [value]="course">{{course.Name}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <div *ngIf="router.url.split('/').pop()?.includes('student')">
+      <ul>
+        <li class="li" *ngFor="let course of userToEdit.courses">{{course}} </li>
+      </ul>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">אישור</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,56 @@
+img{
+  width: 0.7cm;
+}
+button{
+  border: none;
+   background-color: rgb(248 249 250);
+}
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  margin-right: auto;
+}
+
+.menu-toggle {
+  cursor: pointer;
+}
+
+.sidebar {
+  background-color: #f4f4f4;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  transition: left 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar .close {
+  cursor: pointer;
+  float: right;
+  padding: 10px;
+}

@@ -1,0 +1,15 @@
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<div style="height: auto;">
+    <!-- <button (click)="Disconnected()">התנתק</button> -->
+    <mat-tab-group>
+    <div *ngFor="let p of arrCourses; let i=index" >
+        <mat-tab label="{{p.Name}}"><div class="div_details_course">  <details-course [_course]="p"></details-course></div> </mat-tab>
+     </div>
+    </mat-tab-group>
+    
+    <div *ngIf="arrCourses.length==0">
+        <p style="color: red;">המנהל לא שבץ לך קורסים</p>
+    </div>
+    
+    </div>
